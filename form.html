@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.1/dist/bootstrap-float-label.min.css" >
+
+<style>
+body {
+	padding:50px;
+}
+.border-lable-flt {
+  display: block;
+  position: relative;
+}
+.border-lable-flt label, .border-lable-flt > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: text;
+  font-size: 75%;
+  opacity: 1;
+  -webkit-transition: all .2s;
+          transition: all .2s;
+  top: -.5em;
+  left: 0.75rem;
+  z-index: 3;
+  line-height: 1;
+  padding: 0 1px;
+}
+.border-lable-flt label::after, .border-lable-flt > span::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  background: white;
+  height: 2px;
+  top: 50%;
+  left: -.2em;
+  right: -.2em;
+  z-index: -1;
+}
+.border-lable-flt .form-control::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: all .2s;
+          transition: all .2s;
+}
+.border-lable-flt .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+  opacity: 0;
+}
+.border-lable-flt .form-control:placeholder-shown:not(:focus) + * {
+  font-size: 150%;
+  opacity: .5;
+  top: .3em;
+}
+
+.input-group .border-lable-flt {
+  display: table-cell;
+}
+.input-group .border-lable-flt .form-control {
+  border-radius: 0.25rem;
+}
+.input-group .border-lable-flt:not(:last-child), .input-group .border-lable-flt:not(:last-child) .form-control {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right: 0;
+}
+.input-group .border-lable-flt:not(:first-child), .input-group .border-lable-flt:not(:first-child) .form-control {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.form-control:focus {
+  color: #804000;
+  background-color: #fff;
+  border-color: #006633;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
+}
+p {
+	color: #0d8fa3;
+	font-weight: bold;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+	<form>
+		<h4>व्यक्तिगत विवरण</h4>
+		<hr>
+		<p>उम्मेदवारको नाम :</p>
+		<hr>
+	  	<div class="form-row">
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="label-first-name" placeholder="" required>
+			      	<label for="label-first-name">पहिलो *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="label-middle-name" placeholder="" required>
+			      	<label for="label-middle-name">बीचको</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="label-last-name" placeholder="">
+			      	<label for="label-last-name">अन्तिम अर्थात् थर *</label>
+			    </span>
+		    </div>
+		</div>
+		<hr />
+		<div class="form-row">
+		    <div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>लिङ्ग *</span>
+				</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="email" class="form-control" id="email" placeholder="">
+			      	<label for="email">ईमेल *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="contact" placeholder="">
+			      	<label for="contact">मोबाइल नम्बर *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="date" class="form-control" id="label-dob-ad" placeholder="" required>
+			      	<label for="label-dob">जन्म मिति (ईस्वी सम्वत्) *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="date" class="form-control" id="label-dob-bs" placeholder="" required>
+			      	<label for="label-dob">जन्म मिति (वि.सं).मा *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>वैवाहिक स्थिति *</span>
+				</label>
+		    </div>
+		</div>
+		<hr/>
+		<div class="form-row">
+			<div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>नागरिकता नं. *</span>
+				</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>जारी गर्ने जिल्ला *</span>
+				</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="date" class="form-control" id="label-issue-date" placeholder="" required>
+			      	<label for="label-issue-date">जारी मिति( (वि .सं.) *</label>
+			    </span>
+		    </div>
+		</div>
+		<hr>
+		<p>स्थायी ठेगाना :</p>
+		<hr>
+		<div class="form-row">
+		    <div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>जिल्ला *</span>
+				</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>गा.पा. / न.पा. *</span>
+				</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+				      	<option>...</option>
+				    </select>
+	    			<span>वडा न. *</span>
+				</label>
+		    </div> 
+		</div>
+		<hr/>
+		<p>बुवाको नाम:</p>
+		<hr/>
+		<div class="form-row">   
+		  	<div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="father-first-name" placeholder="" required>
+			      	<label for="father-first-name">पहिलो *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="father-middle-name" placeholder="" required>
+			      	<label for="father-middle-name">बीचको</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="father-last-name" placeholder="" required>
+			      	<label for="father-last-name">अन्तिम अर्थात् थर *</label>
+			    </span>
+		    </div>
+		</div>
+		<hr/>
+		<p>आमाको नाम :</p>
+		<hr/>
+		<div class="form-row">
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="mother-first-name" placeholder="" required>
+			      	<label for="father-first-name">पहिलो *</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="mother-middle-name" placeholder="" required>
+			      	<label for="father-middle-name">बीचको</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="text" class="form-control" id="mother-last-name" placeholder="" required>
+			      	<label for="father-last-name">अन्तिम अर्थात् थर *</label>
+			    </span>
+		    </div>
+		</div>
+	</form>
+</div>
+</body>
+</html>
