@@ -6,6 +6,9 @@
 	font-family: 'Alegreya Sans', Arial, sans-serif;
 	text-transform: uppercase;
 }
+img{
+	height: 80px;
+}
 html {
 	font-size: 62.5%;
 }
@@ -47,9 +50,18 @@ ul, li {
 	transition-delay: 1s;
 }
 .header-top {
-	background: rgba(0, 47, 77, .3);
-	height: 70px;
-	padding: 0 10px;
+	background: rgba(0, 47, 77, 0);
+	height: 100px;
+	padding: 10px 10px 10px 40px;
+	position: fixed;
+	width: 100%;
+	z-index: 12;
+	box-sizing: border-box;
+}
+.header-second {
+	background: rgba(0, 47, 77, 0);
+	height: 100px;
+	padding: 10px 10px 10px 40px;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -65,8 +77,8 @@ h1 a {
 	padding: 0 10px;
 }
 .toggle-menu {
-	width: 50px;
-	height: 50px;
+	width: 80px;
+	height: 80px;
 	display: inline-block;
 	position: relative;
 	top: 10px;
@@ -106,7 +118,7 @@ nav {
  	height: 0;
 	opacity: 0;
   box-sizing: border-box;
-	background: rgba(0, 47, 77, .25);
+	background: rgba(0, 47, 77, 0);
 	position: fixed;
 	top: 70px;
 	width: 100%;
