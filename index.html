@@ -5,68 +5,89 @@
   <meta charset="UTF-8">
   <title>Full Page Scrolling | Webdevtrick.com</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/Header-Nightsky.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 </head>
 <body>
 
 <header>
-  <div class="header-nightsky">
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <a class="navbar-brand" href="#">LOGO</a>
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">HOME</a></li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">NEWS <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">DEMOS<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Page 1-1</a></li>
-                                <li><a href="#">Page 1-2</a></li>
-                                <li><a href="#">Page 1-3</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </div>
-    
+  <div class="header-top clearfix">
+    <h1 class="l-left"><a href="#firstSection"><img src="https://volunteer.karnali.gov.np/applicants/images/logo.png"></a></h1>
+    <a class="l-right toggle-menu" href="#">
+      <i></i>
+      <i></i>
+      <i></i>
+    </a>
+  </div>
+
+  <nav class="hide">
+    <ul id="menu">
+      <li data-menuanchor="firstSection">
+        <a href="#firstSection" title="First Section">First Section</a>
+      </li>
+      <li data-menuanchor="secondSection">
+        <a href="#secondSection" title="Second Section">Second Section</a>
+      </li>
+      <li data-menuanchor="thirdSection">
+        <a href="#thirdSection" title="Second Section">Third Section</a>
+      </li>
+      <li data-menuanchor="fourthSection">
+        <a href="#fourthSection" title="Fourth Section">Fourth Section</a>
+      </li>
+      <li data-menuanchor="fifthSection">
+        <a href="#fifthSection" title="First Slide">Fifth Section</a>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <div id="fullpage">
   <section class="vertical-scrolling">
-    <h2>#1</h2>
-    <h3>This is the first section</h3>
+    <h3 class="display-3 text-white">प्रदेश सरकार</h2>
+    <h2 class="display-3 text-white">सामाजिक विकास मन्त्रालय</h2>
+    <h1 class="display-2 text-white font-weight-bolder">कर्णाली स्वयंसेवक परिचालन कार्यक्रम</h1>
+    <h3 class="display-4 text-white">कर्णाली प्रदेश</h3>
+    <h3 class="display-4 text-white">वीरेन्द्रनगर , सुर्खेत, नेपाल</h3>
   </section>
   <section class="vertical-scrolling">
-    <h2>#2</h2>
-    <h3>This is the second section</h3>
+    <div class="d-flex justify-content-around mb-3 container">
+        <div class="p-2">
+            <div class="card bg-info">
+              <div class="card-body bg-info">
+                <h4 class="card-title text-white">फारम भर्दा ध्यान दिनुपर्ने कुराहरु</h4>
+                <hr/>
+                <p class="card-text text-white">अनलाईन दरखास्त फारम भर्दा अपनाउनु पर्ने विधिको लागि तलको बटनमा क्लिक गर्नुस् ।</p>
+                <hr/>
+                <button class="btn btn-primary btn-lg">Click Here</button>
+              </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <div class="card bg-info">
+              <div class="card-body bg-info">
+                <h4 class="card-title text-white">फारम भर्दा ध्यान दिनुपर्ने कुराहरु</h4>
+                <hr/>
+                <p class="card-text text-white">अनलाईन दरखास्त फारम भर्दा अपनाउनु पर्ने विधिको लागि तलको बटनमा क्लिक गर्नुस् ।</p>
+                <hr/>
+                <button class="btn btn-primary btn-lg">Click Here</button>
+              </div>
+            </div>
+        </div>
+        <div class="p-2">
+            <div class="card bg-info">
+              <div class="card-body bg-info">
+                <h4 class="card-title text-white">फारम भर्दा ध्यान दिनुपर्ने कुराहरु</h4>
+                <hr/>
+                <p class="card-text text-white">अनलाईन दरखास्त फारम भर्दा अपनाउनु पर्ने विधिको लागि तलको बटनमा क्लिक गर्नुस् ।</p>
+                <hr/>
+                <button class="btn btn-primary btn-lg">Click Here</button>
+              </div>
+            </div>
+        </div>       
+    </div>
   </section>
   <section class="vertical-scrolling">
     <h2>#3</h2>
@@ -83,9 +104,8 @@
 </div>
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js'></script>
 <script  src="function.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>

@@ -25,7 +25,7 @@ $('#fullpage').fullpage({
 
   onLeave: function(index, nextIndex, direction) {
     if(index == 5) {
-      $('#fp-nav').show();
+      $('#fp-nav').hide();
     }
   },
 
