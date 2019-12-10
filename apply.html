@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://cdn.rawgit.com/tonystar/bootstrap-float-label/v4.0.1/dist/bootstrap-float-label.min.css" >
+
+<style>
+body {
+	padding:50px;
+}
+.border-lable-flt {
+  display: block;
+  position: relative;
+}
+.border-lable-flt label, .border-lable-flt > span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: text;
+  font-size: 75%;
+  opacity: 1;
+  -webkit-transition: all .2s;
+          transition: all .2s;
+  top: -.5em;
+  left: 0.75rem;
+  z-index: 3;
+  line-height: 1;
+  padding: 0 1px;
+}
+.border-lable-flt label::after, .border-lable-flt > span::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  background: white;
+  height: 2px;
+  top: 50%;
+  left: -.2em;
+  right: -.2em;
+  z-index: -1;
+}
+.border-lable-flt .form-control::-webkit-input-placeholder {
+  opacity: 1;
+  -webkit-transition: all .2s;
+          transition: all .2s;
+}
+.border-lable-flt .form-control:placeholder-shown:not(:focus)::-webkit-input-placeholder {
+  opacity: 0;
+}
+.border-lable-flt .form-control:placeholder-shown:not(:focus) + * {
+  font-size: 150%;
+  opacity: .5;
+  top: .3em;
+}
+
+.input-group .border-lable-flt {
+  display: table-cell;
+}
+.input-group .border-lable-flt .form-control {
+  border-radius: 0.25rem;
+}
+.input-group .border-lable-flt:not(:last-child), .input-group .border-lable-flt:not(:last-child) .form-control {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-right: 0;
+}
+.input-group .border-lable-flt:not(:first-child), .input-group .border-lable-flt:not(:first-child) .form-control {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+.form-control:focus {
+  color: #804000;
+  background-color: #fff;
+  border-color: #006633;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
+}
+.save-button {
+	text-align: center;
+}
+h3{
+	padding: 5px;
+}
+</style>
+
+</head>
+<body>
+<div class="container alert alert-secondary">
+		<div class="form-row">
+			<div class="form-group col-md-4">
+		      	<h3 class="text-info">कार्यक्रम छान्नुहोस्</h3>
+		    </div>
+		    <div class="form-group col-md-5">
+		      	<label class="border-lable-flt">
+			    	<select class="form-control custom-select">
+			    		<option selected disabled="">छान्नुहोस्</option>
+				      	<option>छोरी बुहारी छात्रवृत्ति (प्रमाणपत्र / डिप्लोमा)</option>
+				      	<option>उच्च शिक्षा अपांग, जेहेन्दार, दलित र सहिद सन्तति छात्रवृत्ति</option>
+				      	<option>प्राविधिक उच्च शिक्षा छात्रवृत्ति</option>
+				    </select>
+				</label>
+		    </div>
+		    <div class="form-group col-md-2">
+		      	<button class="btn btn-primary">SUBMIT</button>
+		    </div>
+		</div>		
+</div>
+<br/>
+<div class="container card">
+	<h3 class="text-info">छोरी बुहारी छात्रवृत्ति (प्रमाणपत्र / डिप्लोमा)</h3>
+	<hr/>
+	<form>
+		<p class="text-primary">शैछिक अवस्था</p>
+		<hr/>
+	  	<div class="form-row">
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option selected disabled="">छान्नुहोस्</option>
+		    			<option>SLC</option>
+		    			<option>TSLC</option>
+		    			<option>Others</option>
+		    		</select>
+		    		<span>स्कुल</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option selected disabled="">छान्नुहोस्</option>
+		    			<option>GON</option>
+		    			<option>TU</option>
+		    			<option>CTEVT</option>
+		    		</select>
+		    		<span>बोर्ड</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="passed-year" placeholder="">
+			      	<label for="passed-year">उतिर्ण गरेको साल</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<span class="border-lable-flt">
+		    		<input type="number" class="form-control" id="marks" placeholder="">
+		    		<label for="marks">प्रतिशत</label>
+		    	</span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file" id="marksheet">
+			      	<label for="marksheet">ट्रान्स्क्रिप्ट</label>
+			    </span>
+		    </div>
+		</div>
+		<hr/>
+		<p class="text-primary"></p>
+	  	<div class="form-row">
+	  		<div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option selected disabled>छान्नुहोस्</option>
+		    			<option>नर्सिङ्ग</option>
+		    			<option>एच .ए.</option>
+		    			<option>फार्मेसी</option>
+		    			<option>कविराज</option>
+		    			<option>ल्याव टेक्निसियन</option>
+		    			<option>रेडियोलोजी</option>
+		    			<option>बाली बिज्ञान</option>
+		    			<option>पशुविज्ञान</option>
+		    			<option>बनबिज्ञान</option>
+		    			<option>इन्जीनियरिङ्ग</option>
+		    			<option>कम्प्यूटर विज्ञान</option>
+		    		</select>
+		    		<span>पढ्न चाहेको बिषय</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>निवेदन</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>गाउँपालिका/नगरपालिका को सिफारिश</label>
+			    </span>
+		    </div>
+		</div>		
+		<hr/>
+		<p class="save-button"><input type="submit" class="btn btn-primary btn-lg" value="Save and Proceed"></p>
+	</form>
+</div>
+<div class="container card">
+	<h3 class="text-info">उच्च शिक्षा अपांग, जेहेन्दार, दलित र सहिद सन्तति छात्रवृत्ति</h3>
+	<hr/>
+	<form>
+		<p class="text-primary">Education Details</p>
+		<hr/>
+	  	<div class="form-row">
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>+2/A Level</option>
+		    			<option>Diploma</option>
+		    		</select>
+		    		<span>College</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>TU</option>
+		    			<option>CTEVT</option>
+		    			<option>HSEB</option>
+		    			<option>Others</option>
+		    		</select>
+		    		<span>Board</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="contact" placeholder="">
+			      	<label for="contact">Passed Year</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<span class="border-lable-flt">
+		    		<input type="number" class="form-control" id="marks" placeholder="">
+		    		<label for="marks">Percentage</label>
+		    	</span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file" id="marksheet">
+			      	<label for="marksheet">MarkSheet</label>
+			    </span>
+		    </div>
+		</div>
+		<p class="text-primary">Padhaiko Awastha</p>
+		<hr/>
+		<div class="form-row">
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>TU</option>
+		    			<option>MWU</option>
+		    			<option>FWU</option>
+		    			<option>Others</option>
+		    		</select>
+		    		<span>University</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="college-name" placeholder="">
+			      	<label for="college-name">College Name</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="subject" placeholder="">
+			      	<label for="subject">Subject</label>
+			    </span>
+		    </div>
+		</div>
+		<p class="text-primary">Application Scan</p>
+		<hr/>
+	  	<div class="form-row">
+	  		<div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>College Sifaris</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>Letter</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>Sifaris</label>
+			    </span>
+		    </div>
+		</div>		
+		<hr/>
+		<p class="save-button"><input type="submit" class="btn btn-primary btn-lg" value="Save and Proceed"></p>
+	</form>
+</div>
+<div class="container card">
+	<h3 class="text-info">प्राविधिक उच्च शिक्षा छात्रवृत्ति</h3>
+	<hr/>
+	<form>
+		<p class="text-primary">Education Details</p>
+		<hr/>
+	  	<div class="form-row">
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>+2/A Level</option>
+		    			<option>Diploma</option>
+		    		</select>
+		    		<span>College</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>TU</option>
+		    			<option>CTEVT</option>
+		    			<option>HSEB</option>
+		    			<option>Others</option>
+		    		</select>
+		    		<span>Board</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="contact" placeholder="">
+			      	<label for="contact">Passed Year</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<span class="border-lable-flt">
+		    		<input type="number" class="form-control" id="marks" placeholder="">
+		    		<label for="marks">Percentage</label>
+		    	</span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file" id="marksheet">
+			      	<label for="marksheet">MarkSheet</label>
+			    </span>
+		    </div>
+		</div>
+		<p class="text-primary">Padhaiko Awastha</p>
+		<hr/>
+		<div class="form-row">
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>TU</option>
+		    			<option>MWU</option>
+		    			<option>FWU</option>
+		    			<option>Others</option>
+		    		</select>
+		    		<span>University</span>
+		    	</label>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="number" class="form-control" id="college-name" placeholder="">
+			      	<label for="college-name">College Name</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		    	<label class="border-lable-flt">
+		    		<select class="form-control custom-select">
+		    			<option>Health Science</option>
+		    			<option>Public Health</option>
+		    			<option>Engineering</option>
+		    		</select>
+		    		<span>Subject</span>
+		    	</label>
+		    </div>
+		</div>
+		<p class="text-primary">Application Scan</p>
+		<hr/>
+	  	<div class="form-row">
+	  		<div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>College Sifaris</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>Letter</label>
+			    </span>
+		    </div>
+		    <div class="form-group col-md-4">
+		      	<span class="border-lable-flt">
+			      	<input type="file" class="form-control custom-file">
+			      	<label>Sifaris</label>
+			    </span>
+		    </div>
+		</div>		
+		<hr/>
+		<p class="save-button"><input type="submit" class="btn btn-primary btn-lg" value="Save and Proceed"></p>
+	</form>
+</div>
+</body>
+</html>
