@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/aaiselu1/papas.aaiselu.com/
+    - /bin/cp * $DEPLOYPATH
